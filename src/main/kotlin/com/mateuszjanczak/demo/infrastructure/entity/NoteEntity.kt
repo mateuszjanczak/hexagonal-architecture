@@ -1,4 +1,4 @@
-package com.mateuszjanczak.demo.infrastructure.jpa.entity
+package com.mateuszjanczak.demo.infrastructure.entity
 
 import javax.persistence.Column
 import javax.persistence.Entity

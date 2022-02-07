@@ -1,7 +1,7 @@
-package com.mateuszjanczak.demo.infrastructure.jpa.mapper
+package com.mateuszjanczak.demo.infrastructure.mapper
 
 import com.mateuszjanczak.demo.domain.model.Note
-import com.mateuszjanczak.demo.infrastructure.jpa.entity.NoteEntity
+import com.mateuszjanczak.demo.infrastructure.entity.NoteEntity
 import org.springframework.beans.BeanUtils
 
 class NoteMapper {

@@ -1,4 +1,4 @@
-package com.mateuszjanczak.demo.infrastructure.rest
+package com.mateuszjanczak.demo.application
 
 import com.mateuszjanczak.demo.domain.ports.api.NoteServicePort
 import com.mateuszjanczak.demo.domain.model.Note

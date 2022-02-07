@@ -1,9 +1,9 @@
-package com.mateuszjanczak.demo.infrastructure.jpa.adapter
+package com.mateuszjanczak.demo.infrastructure.adapter
 
 import com.mateuszjanczak.demo.domain.model.Note
 import com.mateuszjanczak.demo.domain.ports.spi.NotePersistencePort
-import com.mateuszjanczak.demo.infrastructure.jpa.mapper.NoteMapper
-import com.mateuszjanczak.demo.infrastructure.jpa.repository.NoteRepository
+import com.mateuszjanczak.demo.infrastructure.mapper.NoteMapper
+import com.mateuszjanczak.demo.infrastructure.repository.NoteRepository
 
 class NoteAdapter(
     private val noteRepository: NoteRepository
