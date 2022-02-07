@@ -1,4 +1,4 @@
-package com.mateuszjanczak.demo.domain.spi
+package com.mateuszjanczak.demo.domain.ports.spi
 
 import com.mateuszjanczak.demo.domain.model.Note
 

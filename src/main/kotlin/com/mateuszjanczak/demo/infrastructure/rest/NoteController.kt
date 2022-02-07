@@ -1,24 +1,29 @@
 package com.mateuszjanczak.demo.infrastructure.rest
 
+import com.mateuszjanczak.demo.domain.ports.api.NoteServicePort
 import com.mateuszjanczak.demo.domain.model.Note
+import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RestController
 
-interface NoteController {
+@RestController
+class NoteController(
+    private val noteServicePort: NoteServicePort
+) {
 
     @PostMapping("/notes")
-    fun addNote(@RequestBody note: Note): ResponseEntity<Unit>
+    fun addNote(note: Note): ResponseEntity<Unit> = ResponseEntity(noteServicePort.addNote(note), HttpStatus.OK)
 
     @DeleteMapping("/notes")
-    fun removeNote(@RequestBody note: Note): ResponseEntity<Unit>
+    fun removeNote(note: Note): ResponseEntity<Unit> = ResponseEntity(noteServicePort.removeNote(note), HttpStatus.OK)
 
     @GetMapping("/notes")
-    fun getNotes(): ResponseEntity<List<Note>>
+    fun getNotes(): ResponseEntity<List<Note>> = ResponseEntity(noteServicePort.getNotes(), HttpStatus.OK)
 
     @GetMapping("/notes/{id}")
-    fun getNoteById(@PathVariable id: Long): ResponseEntity<Note>
+    fun getNoteById(@PathVariable id: Long): ResponseEntity<Note> = ResponseEntity(noteServicePort.getNote(id), HttpStatus.OK)
 }

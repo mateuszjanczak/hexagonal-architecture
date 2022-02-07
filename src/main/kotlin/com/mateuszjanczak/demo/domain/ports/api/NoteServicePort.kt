@@ -1,8 +1,8 @@
-package com.mateuszjanczak.demo.application.api
+package com.mateuszjanczak.demo.domain.ports.api
 
 import com.mateuszjanczak.demo.domain.model.Note
 
-interface NoteService {
+interface NoteServicePort {
 
     fun addNote(note: Note)
 

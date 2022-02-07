@@ -1,12 +1,12 @@
-package com.mateuszjanczak.demo.application.adapter
+package com.mateuszjanczak.demo.application
 
-import com.mateuszjanczak.demo.application.api.NoteService
 import com.mateuszjanczak.demo.domain.model.Note
-import com.mateuszjanczak.demo.domain.spi.NotePersistencePort
+import com.mateuszjanczak.demo.domain.ports.api.NoteServicePort
+import com.mateuszjanczak.demo.domain.ports.spi.NotePersistencePort
 
-class NoteServiceAdapter(
+class NoteService(
     private val persistencePort: NotePersistencePort
-) : NoteService {
+) : NoteServicePort {
 
     override fun addNote(note: Note) = persistencePort.addNote(note)
 
